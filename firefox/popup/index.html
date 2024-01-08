@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="tab">
+      <button class="tab-button tab1 active">Gruppy</button>
+      <button class="tab-button tab2">General</button>
+    </div>
+
+    <div id="tab1" class="tab-content" style="display: block">
+      <h1>Gruppy Tools</h1>
+
+      <div class="">
+        <input type="checkbox" name="incognito" id="incognito" />
+        <label for="incognito">Anônimo</label>
+      </div>
+
+      <div class="">
+        <input type="checkbox" name="ambiente" value="dev" id="dev" />
+        <label for="dev"> Desenvolvimento </label>
+      </div>
+
+      <div class="">
+        <label for="store">Loja:</label>
+        <input
+          type="text"
+          id="store"
+          placeholder="Digite o parâmetro"
+          value="max"
+        />
+      </div>
+
+      <div class="">
+        <label for="token">Token:</label>
+        <input type="text" id="token" placeholder="Digite o parâmetro" />
+      </div>
+
+      <button id="openURL" class="btn btn-primary wave light">Abrir</button>
+    </div>
+
+    <div id="tab2" class="tab-content" style="display: none">
+      <h2>Gerador de CPF E CNPJ válidos</h2>
+      <form name="form_main">
+        <div>
+          <label for="number">Número:</label>
+          <div class="form-control">
+            <input name="number" id="number" size="20" type="text" />
+            <button type="button" class="btn btn-primary btn-icon" id="copy">
+              <img title="copiar numero" src="copy.svg" alt="Copy Button" width="20" />
+            </button>
+          </div>
+        </div>
+        Tipo:
+        <input
+          name="type"
+          value="cpf"
+          id="cpf"
+          checked="checked"
+          type="radio"
+        />
+        <label for="cpf">CPF</label>
+        <input name="type" value="cnpj" id="cnpj" type="radio" />
+        <label for="cnpj">CNPJ</label>
+        <input name="mask" value="mask" id="mask" type="checkbox" />
+        <label for="mask">Máscara</label><br /><br />
+
+        <button type="button" id="genarate" class="btn btn-primary">
+          Gerar
+        </button>
+      </form>
+    </div>
+
+    <script src="copy.js"></script>
+    <script src="tabs.js"></script>
+    <script src="cpfcnpj.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

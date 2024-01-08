@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Gruppy Tools",
+  "description": "Helps you to manage your Gruppy account",
+  "version": "2.0",
+  "action": {
+    "default_popup": "popup/index.html",
+    "default_icon": "images/gruppy.png"
+  }
+}
