@@ -44,37 +44,58 @@
     </div>
 
     <div id="tab2" class="tab-content" style="display: none">
-      <h2>Gerador de CPF E CNPJ válidos</h2>
-      <form name="form_main">
-        <div>
-          <label for="number">Número:</label>
-          <div class="form-control">
-            <input name="number" id="number" size="20" type="text" />
-            <button type="button" class="btn btn-primary btn-icon" id="copy">
-              <img title="copiar numero" src="copy.svg" alt="Copy Button" width="20" />
-            </button>
+      <details>
+        <summary><strong>Gerador de CPF E CNPJ válidos</strong></summary>
+        <br />
+        <form name="form_main">
+          <div>
+            <label for="number">Número:</label>
+            <div class="form-control">
+              <input name="number" id="number" size="20" type="text" />
+              <button type="button" class="btn btn-primary btn-icon" id="copy">
+                <img
+                  title="copiar numero"
+                  src="copy.svg"
+                  alt="Copy Button"
+                  width="20"
+                />
+              </button>
+            </div>
           </div>
-        </div>
-        Tipo:
-        <input
-          name="type"
-          value="cpf"
-          id="cpf"
-          checked="checked"
-          type="radio"
-        />
-        <label for="cpf">CPF</label>
-        <input name="type" value="cnpj" id="cnpj" type="radio" />
-        <label for="cnpj">CNPJ</label>
-        <input name="mask" value="mask" id="mask" type="checkbox" />
-        <label for="mask">Máscara</label><br /><br />
+          Tipo:
+          <input
+            name="type"
+            value="cpf"
+            id="cpf"
+            checked="checked"
+            type="radio"
+          />
+          <label for="cpf">CPF</label>
+          <input name="type" value="cnpj" id="cnpj" type="radio" />
+          <label for="cnpj">CNPJ</label>
+          <input name="mask" value="mask" id="mask" type="checkbox" />
+          <label for="mask">Máscara</label><br /><br />
 
-        <button type="button" id="genarate" class="btn btn-primary">
-          Gerar
-        </button>
-      </form>
+          <button type="button" id="genarate" class="btn btn-primary">
+            Gerar
+          </button>
+        </form>
+      </details>
+
+      <br />
+
+      <details open>
+        <summary><strong>Mostrar Senhas</strong></summary>
+        <br />
+        <form name="form_main">
+          <button type="button" id="togglePassword" class="btn btn-primary">
+            Mostrar Senhas
+          </button>
+        </form>
+      </details>
     </div>
 
+    <script src="password.js"></script>
     <script src="copy.js"></script>
     <script src="tabs.js"></script>
     <script src="cpfcnpj.js"></script>

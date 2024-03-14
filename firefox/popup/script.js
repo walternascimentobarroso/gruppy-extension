@@ -23,21 +23,3 @@ function openURL() {
 
   window.close();
 }
-
-function changeTab(tabNumber) {
-  console.log(tabNumber);
-  document.querySelectorAll(".tab-content").forEach((div) => {
-    div.style.display = "none";
-    div.classList.remove("active");
-    console.log(div);
-  });
-
-  document.querySelectorAll(".tab-button").forEach((button) => {
-    if (button.classList.contains("active")) {
-      button.classList.remove("active");
-    }
-  });
-
-  document.getElementById(`tab${tabNumber}`).style.display = "block";
-  document.querySelector(`.tab${tabNumber}`).classList.add("active");
-}

@@ -1,23 +1,26 @@
 {
   "manifest_version": 2,
   "name": "Gruppy",
-  "version": "2.0",
+  "version": "2.1",
 
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "walter.nascimento@gruppy.com.br"
-    }
+  "permissions": ["activeTab", "scripting", "tabs"],
+
+  "icons": {
+    "48": "images/gruppy.png"
   },
 
-  "permissions": ["http://*/*", "https://*/*", "privacy"],
-
   "browser_action": {
-    "default_icon": "images/gruppy.png",
+    "default_icon": {
+      "48": "images/gruppy.png"
+    },
     "default_title": "Gruppy",
     "default_popup": "popup/index.html"
   },
 
-  "icons": {
-    "48": "images/gruppy.png"
+  "applications": {
+    "gecko": {
+      "id": "walter.nascimento@gruppy.com.br",
+      "strict_min_version": "48.0"
+    }
   }
 }

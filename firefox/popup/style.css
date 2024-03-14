@@ -98,3 +98,7 @@ select {
   border: 1px solid #ccc;
   border-top: none;
 }
+
+details summary {
+  cursor: pointer;
+}
