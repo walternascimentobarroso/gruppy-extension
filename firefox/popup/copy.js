@@ -1,8 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector('#copy').addEventListener('click', clipboardCopy);
+  let copyButtons = document.querySelectorAll(".copy-button");
+
+  copyButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      let elementId = button.getAttribute("data-element-copy");
+
+      clipboardCopy(elementId);
+    });
+  });
 });
 
-async function clipboardCopy() {
-  let text = document.querySelector("#number").value;
+async function clipboardCopy(elementId) {
+  let text = document.querySelector(`#${elementId}`).value;
   await navigator.clipboard.writeText(text);
 }

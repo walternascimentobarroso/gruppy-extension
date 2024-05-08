@@ -1,3 +1,10 @@
+let defaultBrowser =
+  typeof browser !== "undefined"
+    ? browser
+    : typeof chrome !== "undefined"
+    ? chrome
+    : {};
+
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("openURL").addEventListener("click", openURL);
 });
@@ -7,7 +14,7 @@ function openURL() {
   let dev = document.getElementById("dev").checked;
   let token = document.getElementById("token").value;
   let store = document.getElementById("store").value;
-  let base = 'app.gruppy.com.br';
+  let base = "app.gruppy.com.br";
   if (dev) {
     base = "localhost";
   }
@@ -16,9 +23,9 @@ function openURL() {
 
   if (incognito) {
     config.incognito = incognito;
-    chrome.windows.create(config);
+    defaultBrowser.windows.create(config);
   } else {
-    chrome.tabs.create(config);
+    defaultBrowser.tabs.create(config);
   }
 
   window.close();

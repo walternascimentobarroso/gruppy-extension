@@ -2,12 +2,9 @@
 
 async function togglePassword(tab) {
   try {
-    console.log("toggling password");
     await browser.scripting.executeScript({
       target: { tabId: tab.id },
       func: () => {
-        console.log("inside password");
-
         let param = 'input[data-original-type="password"]';
         let passwordInputs = document.querySelectorAll(param);
         if (passwordInputs.length > 0) {
@@ -32,7 +29,6 @@ async function togglePassword(tab) {
 
 function logTabs(tabs) {
   let tab = tabs[0];
-  console.log(tab);
 
   const btnTogglePassword = document.getElementById("togglePassword");
   btnTogglePassword.addEventListener("click", () => {

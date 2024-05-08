@@ -1,3 +1,10 @@
+let defaultBrowser =
+  typeof browser !== "undefined"
+    ? browser
+    : typeof chrome !== "undefined"
+    ? chrome
+    : {};
+
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("openURL").addEventListener("click", openURL);
 });
@@ -16,9 +23,9 @@ function openURL() {
 
   if (incognito) {
     config.incognito = incognito;
-    browser.windows.create(config);
+    defaultBrowser.windows.create(config);
   } else {
-    browser.tabs.create(config);
+    defaultBrowser.tabs.create(config);
   }
 
   window.close();

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="pt-br">
   <head>
+    <title>Gruppy Tools</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -45,7 +46,7 @@
     </div>
 
     <div id="tab2" class="tab-content" style="display: none">
-      <details open>
+      <details>
         <summary><strong>Gerador de CPF E CNPJ válidos</strong></summary>
         <br />
         <form name="form_main">
@@ -53,7 +54,11 @@
             <label for="number">Número:</label>
             <div class="form-control">
               <input name="number" id="number" size="20" type="text" />
-              <button type="button" class="btn btn-primary btn-icon" id="copy">
+              <button
+                type="button"
+                class="btn btn-primary btn-icon copy-button"
+                data-element-copy="number"
+              >
                 <img
                   title="copiar numero"
                   src="copy.svg"
@@ -94,8 +99,65 @@
           </button>
         </form>
       </details>
+
+      <br />
+
+      <details>
+        <summary><strong>Gerador de Senhas</strong></summary>
+        <fieldset>
+          <legend>Senha</legend>
+          <div class="form-control">
+            <input name="resultEl" id="resultEl" size="20" type="text" />
+            <button
+              type="button"
+              class="btn btn-primary btn-icon copy-button"
+              data-element-copy="resultEl"
+            >
+              <img
+                title="copiar senha"
+                src="copy.svg"
+                alt="Copy Button"
+                width="20"
+              />
+            </button>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Tamanho</legend>
+          <label for="lengthEl">Tamanho</label>
+          <input type="number" id="lengthEl" min="1" value="8" />
+        </fieldset>
+        <fieldset>
+          <legend>Incluir</legend>
+          <div>
+            <span>
+              <label for="uppercaseEl">Maiúsculas</label>
+              <input type="checkbox" id="uppercaseEl" checked />
+            </span>
+            <span>
+              <label for="lowercaseEl">Minúscula</label>
+              <input type="checkbox" id="lowercaseEl" checked />
+            </span>
+          </div>
+          <div>
+            <span>
+              <label for="numberEl">Números</label>
+              <input type="checkbox" id="numberEl" checked />
+            </span>
+            <span>
+              <label for="symbolEl">Símbolos</label>
+              <input type="checkbox" id="symbolEl" checked />
+            </span>
+          </div>
+        </fieldset>
+        <br />
+        <div>
+          <button id="generateEl" class="btn btn-primary">Gerar Senhas</button>
+        </div>
+      </details>
     </div>
 
+    <script src="generatePassword.js"></script>
     <script src="panic.js"></script>
     <script src="password.js"></script>
     <script src="copy.js"></script>
